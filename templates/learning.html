@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css"/>
+</head>
+</body class="justbody">
+<div class = "nav_panel">
+    <form action="/main/">
+        <button class="nav_button">Главная</button>
+    </form>
+
+    <form action="/about/">
+        <button class="nav_button">О нас</button>
+    </form>
+</div>
+    <div>
+        <form action="/learning/" method="get">
+            {% csrf_token %}
+            Введите номер вопроса: <input type="text" name="key2"/><br>
+            Введите ответ: <input type="text" name="key"/><br>
+            <input type="submit" value="Ответить"/><br>
+        </form><br>
+        <form>
+            {% csrf_token %}
+            Введите номер вопроса для получения подсказки:<br>
+            <input type="text" name="key4"/>
+            <input type="submit" value="Подсказка"/><br>
+        </form><br>
+        <form action="/learning/">
+            {% for item in list %}
+                <div>
+                    {{ item }}
+                </div><br>
+            {% endfor %}
+        </form>
+        <form action="/learning/" method="get">
+            <input type="hidden" name="key3" value="ok"/>
+            <input type="submit" value="Начать заново"/>
+        </form>
+    </div>
+</body>
+</html>

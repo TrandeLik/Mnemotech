@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+</head>
+</body>
+    <div>
+        <form action="/converterdate/" method="get">
+            {% csrf_token %}
+            <input type="text" name="key21"/>
+            <input type="submit" value="Конвертировать"/>
+        </form>
+        <form action="/converterdate/">
+            {% for item in list %}
+                <div>
+                    {{ item }}
+                </div>
+            {% endfor %}
+        </form>
+        <form action="/converterdate/" method="get">
+            {% csrf_token %}
+            <input type="hidden" name="key22" value="clear"/>
+            <input type="submit" value="Очистить"/>
+        </form>
+    </div>
+</body>
+</html>

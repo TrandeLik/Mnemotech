@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+    <link rel="stylesheet" href="static/style.css" type="text/css"/>
+</head>
+<body class="justbody">
+    <div class = "nav_panel">
+    <form action="/main/">
+        <button class="nav_button">Главная</button>
+    </form>
+
+    <form action="/about/">
+        <button class="nav_button">О нас</button>
+    </form>
+</div>
+    <div>
+        <form action="/converter/" method="get">
+            {% csrf_token %}
+            <input type="text" name="key11"/>
+            <input type="submit" value="Конвертировать"/>
+        </form>
+        <form action="/converter/">
+            {% for item in list %}
+                <div>
+                    {{ item }}
+                </div>
+            {% endfor %}
+        </form>
+        <form action="/converter/" method="get">
+            {% csrf_token %}
+            <input type="hidden" name="key12" value="clear"/>
+            <input type="submit" value="Очистить"/>
+        </form>
+    </div>
+</body>
+</html>
