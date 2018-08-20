@@ -34,7 +34,6 @@ def converter(request):
     key12 = request.GET.get("key12")
     if key11:
         p = conv(before=key11)
-        p.cnv()
         p.save()
     res = conv.objects.all()
     if key12:

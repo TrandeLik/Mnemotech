@@ -27,9 +27,9 @@ class conv(models.Model):
     before = models.CharField(max_length=250, default="abc")
     after = models.CharField(max_length=250, default="lol")
 
-    def cnv(self):
+    #def cnv(self):
         #result = os.popen("C:\cin.exe")
-        output = subprocess.Popen([])
+     #   output = subprocess.Popen([])
 
     def __str__(self):
         return self.before + " - " + self.after
